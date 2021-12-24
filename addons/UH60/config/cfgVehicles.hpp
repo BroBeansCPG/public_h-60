@@ -14,6 +14,7 @@ class CfgVehicles
             class MainTurret;
             class CopilotTurret;
         };
+        class Attributes;
         class Eventhandlers;
         class Viewoptics;
         class ViewPilot;
@@ -22,10 +23,14 @@ class CfgVehicles
         class Components;
         class Sounds;
         class HitPoints;
+        class UserActions;
     };
 
     class vtx_H60_base: Heli_Transport_01_base_F
     {
+        #include "CfgUserActions.hpp"
+        #include "edenAttributes.hpp"
+        author = "Project Hatchet Studio";
         class VTX_H60_HDTS_Copilot;
         #include "cfgVxf.hpp"
         memoryPointDriverOptics = "slingcam";
@@ -65,6 +70,10 @@ class CfgVehicles
         #include "cfgVehiclesParts\fries.hpp"
         #include "cfgVehiclesParts\hitPoints.hpp"
         //#include "cfgVehiclesParts\vehicleCustomization.hpp"
+        
+        reportOwnPosition = 1;
+        reportRemoteTargets = 1;
+        receiveRemoteTargets = 1;
 
         irTargetSize = 1.2;
         radarTargetSize = 1.2;
@@ -177,8 +186,32 @@ class CfgVehicles
 
 		memoryPointsGetInGunner[] = {"pos Cargo L","pos Cargo R"};
 		memoryPointsGetInGunnerDir[] = {"pos Cargo L dir","pos Cargo R dir"};
-		memoryPointsGetInCargo[] = {"pos Cargo L","pos Cargo R"};
-		memoryPointsGetInCargoDir[] = {"pos Cargo L dir","pos Cargo R dir"};
+		memoryPointsGetInCargo[] = {
+      "pos Cargo L5",
+      "pos Cargo L5",
+      "pos Cargo R5",
+      "pos Cargo R5",
+      "pos Cargo R3",
+      "pos Cargo R3",
+      "pos Cargo L3",
+      "pos Cargo L3",
+      "pos Cargo L",
+      "pos Cargo R",
+      "pos Cargo R"
+    };
+		memoryPointsGetInCargoDir[] = {
+      "pos Cargo L5 dir",
+      "pos Cargo L5 dir",
+      "pos Cargo R5 dir",
+      "pos Cargo R5 dir",
+      "pos Cargo R3 dir",
+      "pos Cargo R3 dir",
+      "pos Cargo L3 dir",
+      "pos Cargo L3 dir",
+      "pos Cargo L dir",
+      "pos Cargo R dir",
+      "pos Cargo R dir"
+    };
         hideWeaponsCargo = 1;
         cargoCanEject = 1;
         driverCanEject = 0;
@@ -328,7 +361,8 @@ class CfgVehicles
         #include "cfgAnimationSources.hpp"
         gearRetracting		= 0;
         gearMinAlt			= 999999;
-        turnCoef			= 1.6;
+
+        turnCoef			= 4; // Rolling Friction, higher stops more quickly
         terrainCoef 		= 1;
         damperSize 			= 1;
         damperForce 		= 10;
@@ -407,7 +441,7 @@ class CfgVehicles
                 suspTravelDirection[]		= {0, -1.0, 0.0};
 
                 sprungMass					= 500;
-                springStrength				= 2000;
+                springStrength				= 1000;
                 springDamperRate			= 2000;
             };
         };

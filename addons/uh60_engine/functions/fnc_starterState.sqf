@@ -34,7 +34,7 @@ if (_temp > -55 && _temp < 52) then {
     _canStartTwin = _underTwinStartSlope && _underTwinStartLimit && _airFlow;
 };
 
-systemChat str [_canStartSingle, _canStartTwin];
+if(vtx_uh60_ui_showDebugMessages) then {systemChat str [_canStartSingle, _canStartTwin];};
 
 if (_animName == "STARTER1") then {
     if((_vehicle getVariable ["ENG_START2", false] && _canStartSingle) || _canStartTwin) then {
@@ -58,3 +58,5 @@ if (_animName == "STARTER2") then {
         if (!isNil "vtx_uh60_start2_dummy") then {deleteVehicle vtx_uh60_start2_dummy};
     };
 };
+
+[_vehicle] call vtx_uh60_cas_fnc_updateCautions;

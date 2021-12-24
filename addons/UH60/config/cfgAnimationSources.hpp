@@ -51,12 +51,12 @@ class AnimationSources
         initPhase=1;
     };
     class FLIR_DIRECTION {
-        source="pilotCameraRotX";
+        source="user";
         animPeriod=1;
         initPhase=0;
     };
     class FLIR_ELEVATION {
-        source="pilotCameraRotY";
+        source="user";
         animPeriod=1;
         initPhase=0;
     };
@@ -221,7 +221,9 @@ class AnimationSources
     class CautionEng1Out:ACCLow{};
     class CautionEng2Out:ACCLow{};
     class CautionFire:ACCLow{};
-    class CautionMasterCaution:ACCLow{};
+    class CautionMasterCaution:ACCLow{
+        initPhase = 0;
+    };
     class Gauge_temp
     {
             source="user";

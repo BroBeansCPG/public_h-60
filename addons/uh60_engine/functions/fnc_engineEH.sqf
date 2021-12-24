@@ -18,7 +18,7 @@ if(
 ) exitWith {
     _vehicle setVariable ["ENG1_PWR", 0, true];
     _vehicle setVariable ["ENG2_PWR", 0, true];
-    systemChat "damage start cancel";
+    if(vtx_uh60_ui_showDebugMessages) then {systemChat "damage start cancel";};
     _vehicle engineOn false;
 };
 
@@ -40,7 +40,6 @@ if (_fuelFlow1 > 0) then {
         if (_starter1) then {
             _power = _power + (_throttle1 / 2);
             _vehicle setVariable ["ENG1_PWR", _throttle1, true];
-            if (_lever == "b_engpowercont1") then { _vehicle setVariable ["ENG_START1", false, true]; };
         };
     } else { // otherwise just update the power state if it was already running anyways
         _power = _power + (_throttle1 / 2);
@@ -55,7 +54,6 @@ if (_fuelFlow2 > 0) then {
         if (_starter2) then {
             _power = _power + (_throttle2 / 2);
             _vehicle setVariable ["ENG2_PWR", _throttle2, true];
-            if (_lever == "b_engpowercont2") then { _vehicle setVariable ["ENG_START2", false, true]; };
         };
     } else { // otherwise just update the power state if it was already running anyways
         _power = _power + (_throttle2 / 2);
@@ -68,6 +66,6 @@ if (_fuelFlow2 > 0) then {
 _turnedOn = (_power > 0);
 
 _vehicle engineOn _turnedOn;
-systemChat "ENGINE STATE CHANGE";
+if(vtx_uh60_ui_showDebugMessages) then {systemChat "ENGINE STATE CHANGE";};
 _this call vtx_uh60_engine_fnc_batteryState;
 [_vehicle] call vtx_uh60_cas_fnc_updateCautionPanel;
