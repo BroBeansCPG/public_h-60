@@ -74,17 +74,21 @@ class Draw {
 	class MSN {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_MSN);
 		#include "fms\mission_draw.hpp"
-	}; // nav_wpn
+	}; // MSN
 	class RDR {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_RDR);
 		#include "fms\radar_draw.hpp"
-	}; // nav_wpn
+	}; // RDR
 	class FLIR {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_FLIR);
 		#include "fms\flir_draw.hpp"
-	}; // nav_wpn
+	}; // FLIR
 	class HMD {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_HMD);
 		#include "fms\hmd_draw.hpp"
-	}; // nav_wpn
+	}; // HMD
+	class COMM {
+		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM);
+		#include "fms\comm_draw.hpp"
+	}; // COMM
 }; // Draw
