@@ -12,9 +12,10 @@ class menu {
   condition= USERVAL(FMS_PAGE_INDEX,FMS_PAGE_MENU);
   FMS_BTN(FMS_6,"Communications","") 
     buttonUp=[(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_COMM], true] call vtx_uh60_fms_fnc_interaction_pageChange; 
+    condition = (!(isClass (configFile >> "cfgPatches" >> "acre_main")) && !(isClass (configFile >> "cfgPatches" >> "tfar_main")));
   };
-  //FMS_BTN(FMS_7,"COMM 2","") buttonUp=""; };
-  //FMS_BTN(FMS_8,"COMM 3","") buttonUp=""; };
+  //FMS_BTN(FMS_6,"Communications","") buttonUp=""; condition= (isClass (configFile >> "cfgPatches" >> "acre_main")); };
+  //FMS_BTN(FMS_6,"Communications","") buttonUp=""; condition= (isClass (configFile >> "cfgPatches" >> "tfar_main")); };
   //FMS_BTN(FMS_9,"COMM 4","") buttonUp=""; };
 
   FMS_BTN(FMS_1,"Checklists","")
@@ -118,7 +119,7 @@ class nav_location_stores {
   FMS_BTN(FMS_8,"View","") buttonUp=[vehicle player,"location", 2, [FMS_PAGE_INDEX,FMS_PAGE_NAV_LOCATIONS_SEL]] call vtx_uh60_fms_fnc_interaction_waypoint; };
   FMS_BTN(FMS_9,"View","") buttonUp=[vehicle player,"location", 3, [FMS_PAGE_INDEX,FMS_PAGE_NAV_LOCATIONS_SEL]] call vtx_uh60_fms_fnc_interaction_waypoint; };
   FMS_BTN(FMS_10,"Navigation System","")
-      buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_NAV_WAYPOINT], true] call vtx_uh60_fms_fnc_interaction_pageChange;
+    buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_NAV_WAYPOINT], true] call vtx_uh60_fms_fnc_interaction_pageChange;
   };
 };
 class nav_location_sel {
@@ -200,5 +201,12 @@ class hmd {
   };
   FMS_BTN(FMS_10,"Mission Systems","")
     buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_MSN], true] call vtx_uh60_fms_fnc_interaction_pageChange;
+  };
+};
+
+class COMM {
+  condition=USERVAL(FMS_PAGE_INDEX,FMS_PAGE_COMM);
+  FMS_BTN(FMS_10, "Main Menu", "")
+    buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_MENU], true] call vtx_uh60_fms_fnc_interaction_pageChange;
   };
 };
