@@ -234,3 +234,36 @@ class COMM {
     buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_MENU], true] call vtx_uh60_fms_fnc_interaction_pageChange;
   };
 };
+
+class COMM_ACRE {
+  condition=USERVAL(FMS_PAGE_INDEX,FMS_PAGE_COMM_ACRE);
+  FMS_BTN(FMS_10, "Return", "")
+    buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_MENU], true] call vtx_uh60_fms_fnc_interaction_pageChange;
+  };
+
+  FMS_BTN(FMS_1, "Next Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 0] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel + 1)] call acre_api_fnc_setRadioChannel;";
+  };
+  FMS_BTN(FMS_2, "Next Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 1] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel + 1)] call acre_api_fnc_setRadioChannel;";
+  };
+  FMS_BTN(FMS_3, "Next Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 2] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel + 1)] call acre_api_fnc_setRadioChannel;";
+  };
+  FMS_BTN(FMS_4, "Next Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 3] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel + 1)] call acre_api_fnc_setRadioChannel;";
+  };
+
+  FMS_BTN(FMS_6, "Previous Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 0] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel - 1)] call acre_api_fnc_setRadioChannel;";
+  };
+  FMS_BTN(FMS_7, "Previous Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 1] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel - 1)] call acre_api_fnc_setRadioChannel;";
+  };
+  FMS_BTN(FMS_8, "Previous Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 2] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel - 1)] call acre_api_fnc_setRadioChannel;";
+  };
+  FMS_BTN(FMS_9, "Previous Channel", "")
+    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 3] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel - 1)] call acre_api_fnc_setRadioChannel;";
+  };
+};
