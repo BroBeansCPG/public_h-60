@@ -100,4 +100,8 @@ class Draw {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM);
 		#include "fms\comm_draw.hpp"
 	}; // COMM
+	class COMM_ACRE {
+		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM_ACRE);
+		#include "fms\comm_acre_draw.hpp"
+	}; // COMM
 }; // Draw

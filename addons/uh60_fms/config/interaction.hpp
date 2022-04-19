@@ -10,11 +10,12 @@
 
 class menu {
   condition= USERVAL(FMS_PAGE_INDEX,FMS_PAGE_MENU);
-  FMS_BTN(FMS_6,"Communications","") 
+  /*FMS_BTN(FMS_6,"Communications","") 
     buttonUp=[(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_COMM], true] call vtx_uh60_fms_fnc_interaction_pageChange; 
     condition = (!(isClass (configFile >> "cfgPatches" >> "acre_main")) && !(isClass (configFile >> "cfgPatches" >> "tfar_main")));
-  };
-  //FMS_BTN(FMS_6,"Communications","") buttonUp=""; condition= (isClass (configFile >> "cfgPatches" >> "acre_main")); };
+  };*/
+  FMS_BTN(FMS_6,"Communications","") buttonUp=[(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_COMM_ACRE], true] call vtx_uh60_fms_fnc_interaction_pageChange; 
+  condition= (isClass (configFile >> "cfgPatches" >> "acre_main")); };
   //FMS_BTN(FMS_6,"Communications","") buttonUp=""; condition= (isClass (configFile >> "cfgPatches" >> "tfar_main")); };
   //FMS_BTN(FMS_9,"COMM 4","") buttonUp=""; };
 
