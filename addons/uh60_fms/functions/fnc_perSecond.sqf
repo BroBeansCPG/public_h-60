@@ -93,9 +93,10 @@ private _strings = switch ((getUserMFDValue _vehicle) # _fms) do {
             private _radioPreset = [_x] call acre_api_fnc_getPreset;
             private _frequencyTX = ([_x, "getCurrentChannelData"] call acre_sys_data_fnc_dataEvent) getVariable "frequencyTx";
             private _channelOut = [_radioBase, "default", _radioChannel, "label"] call acre_api_fnc_getPresetChannelField;
-            private _frequencyTXOut = [_frequencyTX, 0, 3] call CBA_fnc_formatNumber;
+            private _frequencyTXOut = [_frequencyTX, 1, 3] call CBA_fnc_formatNumber;
             _strings set [_forEachIndex, format ["%1 MHz        CH%2    %3", _frequencyTXOut, _radioChannel, _channelOut]];
         } forEach _radios;
+        _strings
     };
     default {
         ["", "", "", "",""]
