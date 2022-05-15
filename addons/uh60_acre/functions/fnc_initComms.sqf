@@ -1,5 +1,5 @@
 /*
- * vtx_uh60_acre_fnc_init
+ * vtx_uh60_acre_fnc_initComms
  *
  * initializes acre comms systems once BUS is on
  *
@@ -7,9 +7,7 @@
  */
 params ["_vehicle"];
 
-_status = [] call acre_api_fnc_isInitialized;
-waitUntil {_status}; 
-_monitorPos = [_vehicle, acre_player, 0, "monitorKnob"] call acre_sys_intercom_fnc_getStationConfiguration;
+private _monitorPos = [_vehicle, acre_player, 0, "monitorKnob"] call acre_sys_intercom_fnc_getStationConfiguration;
 
 if(!(_monitorPos == 7)) then {
     [_vehicle, acre_player, 0, "monitorKnob", 7] call acre_sys_intercom_fnc_setStationConfiguration;

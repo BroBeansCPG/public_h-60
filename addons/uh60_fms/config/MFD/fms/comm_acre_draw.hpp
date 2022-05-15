@@ -6,6 +6,18 @@ TEXT_FMS_L(RADIO_ONE_L1,FMS_MARGIN_L,FMS_Y1-FMS_HALF_LINE)
   source = "static";
   text = "FM1";
 }; // Radio1_Line1
+class Comm1_box {
+  type="line";
+  width = 3;
+  lineType = 2;
+  points[] ={
+    {{FMS_Y1+0.05+0.05, 0.30},1},
+    {{0.35-0.05+0.05, 0.30},1},
+    {{0.35-0.05+0.05, 0.8},1},
+    {{0.15+0.05+0.05, 0.8},1},
+    {{0.15+0.05+0.05, 0.30},1}
+  };
+}; // HEADER_BARS
 TEXT_FMS_L(RADIO_ONE_L2,FMS_MARGIN_L,FMS_Y1+FMS_HALF_LINE)
   source = "userText";
   sourceIndex=20;
