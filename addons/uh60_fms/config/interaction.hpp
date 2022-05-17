@@ -242,7 +242,7 @@ class COMM_ACRE {
   };
 
   FMS_BTN(FMS_1, "Next Channel", "")
-    buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 0] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel + 1)] call acre_api_fnc_setRadioChannel;";
+    buttonUp=[(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_COMM1_ACRE], true] call vtx_uh60_fms_fnc_interaction_pageChange;
   };
   FMS_BTN(FMS_2, "Next Channel", "")
     buttonUp="private _racks = [_vehicle] call acre_sys_rack_fnc_getVehicleRacks; private _radio = [_racks # 1] call acre_sys_rack_fnc_getMountedRadio; _currentChannel = [_radio] call acre_api_fnc_getRadioChannel; _newChannel = [_radio, (_currentChannel + 1)] call acre_api_fnc_setRadioChannel;";
