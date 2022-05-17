@@ -2,28 +2,41 @@ TEXT_FMS_C(HEADER_TEXT,0.5,FMS_YHEAD)
   source = "static";
   text = "COMMUNICATIONS";
 }; // HEADER_TEXT
+
+/*class Comm1_box {
+  type="line";
+  width = 5;
+  lineType = 2;
+  points[] ={
+    {{FMS_MARGIN_L, FMS_Y1+0.037},1}, //BL
+    {{FMS_MARGIN_L+0.157, FMS_Y1+0.037},1}, //BR
+    {{FMS_MARGIN_L+0.157, FMS_Y1-0.015},1}, //TR
+    {{FMS_MARGIN_L, FMS_Y1-0.015},1}, //TL
+    {{FMS_MARGIN_L, FMS_Y1+0.037},1} //BL
+  };
+}; // Comm1_box*/
 TEXT_FMS_L(RADIO_ONE_L1,FMS_MARGIN_L,FMS_Y1-FMS_HALF_LINE)
   source = "static";
   text = "FM1";
 }; // Radio1_Line1
-class Comm1_box {
-  type="line";
-  width = 3;
-  lineType = 2;
-  points[] ={
-    {{FMS_Y1+0.05+0.05, 0.30},1},
-    {{0.35-0.05+0.05, 0.30},1},
-    {{0.35-0.05+0.05, 0.8},1},
-    {{0.15+0.05+0.05, 0.8},1},
-    {{0.15+0.05+0.05, 0.30},1}
-  };
-}; // HEADER_BARS
 TEXT_FMS_L(RADIO_ONE_L2,FMS_MARGIN_L,FMS_Y1+FMS_HALF_LINE)
   source = "userText";
   sourceIndex=20;
   sourceScale=1;
 }; // Radio1_Line2
 
+/*class Comm2_box {
+  type="line";
+  width = 5;
+  lineType = 2;
+  points[] ={
+    {{FMS_MARGIN_L, FMS_Y2+0.037},1}, //BL
+    {{FMS_MARGIN_L+0.157, FMS_Y2+0.037},1}, //BR
+    {{FMS_MARGIN_L+0.157, FMS_Y2-0.015},1}, //TR
+    {{FMS_MARGIN_L, FMS_Y2-0.015},1}, //TL
+    {{FMS_MARGIN_L, FMS_Y2+0.037},1} //BL
+  };
+}; // Comm2_box*/
 TEXT_FMS_L(RADIO_TWO_L1,FMS_MARGIN_L,FMS_Y2-FMS_HALF_LINE)
   source = "static";
   text = "UHF";
@@ -34,6 +47,18 @@ TEXT_FMS_L(RADIO_TWO_L2,FMS_MARGIN_L,FMS_Y2+FMS_HALF_LINE)
   sourceScale=1;
 }; // Radio2_Line2
 
+/*class Comm3_box {
+  type="line";
+  width = 5;
+  lineType = 2;
+  points[] ={
+    {{FMS_MARGIN_L, FMS_Y3+0.037},1}, //BL
+    {{FMS_MARGIN_L+0.157, FMS_Y3+0.037},1}, //BR
+    {{FMS_MARGIN_L+0.157, FMS_Y3-0.015},1}, //TR
+    {{FMS_MARGIN_L, FMS_Y3-0.015},1}, //TL
+    {{FMS_MARGIN_L, FMS_Y3+0.037},1} //BL
+  };
+}; // Comm3_box*/
 TEXT_FMS_L(RADIO_THREE_L1,FMS_MARGIN_L,FMS_Y3-FMS_HALF_LINE)
   source = "static";
   text = "VHF";
@@ -44,6 +69,18 @@ TEXT_FMS_L(RADIO_THREE_L2,FMS_MARGIN_L,FMS_Y3+FMS_HALF_LINE)
   sourceScale=1;
 }; // Radio3_Line2
 
+/*class Comm4_box {
+  type="line";
+  width = 5;
+  lineType = 2;
+  points[] ={
+    {{FMS_MARGIN_L, FMS_Y4+0.037},1}, //BL
+    {{FMS_MARGIN_L+0.157, FMS_Y4+0.037},1}, //BR
+    {{FMS_MARGIN_L+0.157, FMS_Y4-0.015},1}, //TR
+    {{FMS_MARGIN_L, FMS_Y4-0.015},1}, //TL
+    {{FMS_MARGIN_L, FMS_Y4+0.037},1} //BL
+  };
+}; // Comm4_box*/
 TEXT_FMS_L(RADIO_FOUR_L1,FMS_MARGIN_L,FMS_Y4-FMS_HALF_LINE)
   source = "static";
   text = "FM2";

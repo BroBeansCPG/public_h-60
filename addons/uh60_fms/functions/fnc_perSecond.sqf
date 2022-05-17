@@ -85,6 +85,7 @@ private _strings = switch ((getUserMFDValue _vehicle) # _fms) do {
     case FMS_PAGE_COMM_ACRE: {
         private _strings = ["", "", "", "", ""];
         private _racks = [_vehicle] call acre_api_fnc_getVehicleRacks;
+        _racks resize 4;
         private _radios = _racks apply {[_x] call acre_api_fnc_getMountedRackRadio};
         {
             private _radio = _x;
