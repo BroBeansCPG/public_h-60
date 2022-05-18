@@ -99,6 +99,26 @@ private _strings = switch ((getUserMFDValue _vehicle) # _fms) do {
         } forEach _radios;
         _strings
     };
+    case FMS_PAGE_PRESET_LIST: {
+        private _racks = [_vehicle] call acre_api_fnc_getVehicleRacks;
+        private _radio = [_racks # 0] call acre_api_fnc_getMountedRackRadio;
+        private _radioBase = [_radio] call acre_api_fnc_getBaseRadio;
+        private _presets = [];
+        for "_i" from 1 to 12 do {
+            _preset = [_radioBase, "default", _i, "label"] call acre_api_fnc_getPresetChannelField;
+            _presets pushBack _preset;
+        };
+        private _pageCount = ceil ((count _presets) / 4);
+        fms_presets_page_index = fms_presets_page_index max 0 min (_pageCount - 1);
+        private _strings = [format["%1/%2", fms_presets_page_index + 1, _pageCount], "", "", "",""];
+        private _fmsPrintStart = fms_presets_page_index * 4;
+        for "_i" from 0 to 3 do {
+            if (_fmsPrintStart + _i < count _presets) then {
+                _strings set [_i + 1, _presets # (_fmsPrintStart + _i)];
+            };
+        };
+        _strings
+    };
     default {
         ["", "", "", "",""]
     };

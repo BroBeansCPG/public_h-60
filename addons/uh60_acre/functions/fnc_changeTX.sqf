@@ -64,20 +64,7 @@ if (_newWorkPos != 0) then {
         if ((_newWorkPos != _monitorPos) && {_radioId != ""}) then {
             [_vehicle, acre_player, _radioId] call acre_sys_rack_fnc_startUsingMountedRadio;
             private _pttAssign = [_vehicle] call acre_api_fnc_getMultiPushToTalkAssignment;
-            if (count _pttAssign > 3) then {
-            _pttAssign resize 3;
-            };
-            private _oldIdx = _pttAssign find _radio;
-
-            if (_desiredIdx + 1 > count _pttAssign) then {
-                _desiredIdx = (count _pttAssign) - 1;
-            };
-
-            if (_oldIdx > -1 and _oldIdx < 3) then {
-                _pttAssign set [_oldIdx, _pttAssign select _desiredIdx];
-            };
-
-            _pttAssign set [_desiredIdx, _radio];
+            _pttAssign set [2, _radioID];
 
             [_pttAssign] call acre_api_fnc_setMultiPushToTalkAssignment;
         };

@@ -48,6 +48,15 @@
     text = TEXT; \
   };
 
+#define TEXT_FMS_RS(CLASS,X,Y) \
+  class CLASS { \
+    type = "text"; \
+    align = "left"; \
+    scale = 0.7; \
+    pos[] = {{X-0.002, Y-0.004}, 1}; \
+    right[] = {{X + 0.1, Y-0.004}, 1}; \
+    down[] = {{X-0.002, Y + 0.079}, 1};
+
 #define FMS_HALF_LINE 0.0275
 #define FMS_MARGIN_L 0.05
 #define FMS_MARGIN_R 1-0.1
@@ -90,6 +99,7 @@
 #define FMS_PAGE_COMM 19
 #define FMS_PAGE_COMM_ACRE 20
 #define FMS_PAGE_COMM1_ACRE 21
+#define FMS_PAGE_PRESET_LIST 24
 
 #define FMS_L_PAGE_INDEX 31
 #define FMS_R_PAGE_INDEX 32

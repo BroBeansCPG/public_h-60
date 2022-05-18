@@ -3,8 +3,28 @@ TEXT_FMS_C(HEADER_TEXT,0.5,FMS_YHEAD)
   text = "FM1";
 }; // HEADER_TEXT
 
+TEXT_FMS_R(PRESET_SEL,FMS_MARGIN_R - 0.02, FMS_Y1-FMS_HALF_LINE)
+  source = "static";
+  text = "PRESET";
+}; //PRESET_SEL
+TEXT_FMS_R(PRESET_SEL_VAL,FMS_MARGIN_R - 0.025, FMS_Y1+FMS_HALF_LINE+0.012)
+  source = "static";
+  text = "PLTNET";
+}; //PRESET_VAL
+class PRESET_box {
+  type="line";
+  width = 5;
+  lineType = 2;
+  points[] ={
+    {{FMS_MARGIN_R + 0.01, FMS_Y1 + 0.11},1}, //BR
+    {{FMS_MARGIN_R - 0.25, FMS_Y1 + 0.11},1}, //BL
+    {{FMS_MARGIN_R - 0.25, FMS_Y1 + 0.045},1}, //TL
+    {{FMS_MARGIN_R + 0.01, FMS_Y1 + 0.045},1}, //TR
+    {{FMS_MARGIN_R + 0.01, FMS_Y1 + 0.11},1} //BR
+  };
+}; // PRESET_box
 
-TEXT_FMS_L(RADIO_MHZ,0.37,FMS_Y2+FMS_HALF_LINE)
+TEXT_FMS_L(RADIO_MHZ,0.42,FMS_Y2+FMS_HALF_LINE)
   source = "static";
   text = "59.500";
   //sourceIndex=20;
@@ -20,13 +40,13 @@ class PGUP_CH
   {
     // space where texture should be drawn
     {
-      {{FMS_MARGIN_L + 0.04, FMS_Y1 + 0.01},1},
-      {{FMS_MARGIN_L + 0.09, FMS_Y1 + 0.06},1},
-      {{FMS_MARGIN_L - 0.0, FMS_Y1 + 0.06},1}
+      {{FMS_MARGIN_L + 0.06, FMS_Y1 + 0.01},1},
+      {{FMS_MARGIN_L + 0.11, FMS_Y1 + 0.06},1},
+      {{FMS_MARGIN_L + 0.02, FMS_Y1 + 0.06},1}
     }
   }; // points
 }; // PGUP
-TEXT_FMS_L(CH_ROCKER,FMS_MARGIN_L,FMS_Y2-(3*FMS_HALF_LINE))
+TEXT_FMS_L(CH_ROCKER,FMS_MARGIN_L + 0.02,FMS_Y2-(0.07))
   source = "static";
   text = "CH1";
 }; // Radio2_Line1
@@ -37,9 +57,9 @@ class PGDOWN_CH
   {
     // space where texture should be drawn
     {
-      {{FMS_MARGIN_L + 0.04, FMS_Y2 + 0.07},1},
-      {{FMS_MARGIN_L + 0.09, FMS_Y2 + 0.02},1},
-      {{FMS_MARGIN_L - 0.0, FMS_Y2 + 0.02},1}
+      {{FMS_MARGIN_L + 0.06, FMS_Y2 + 0.07},1},
+      {{FMS_MARGIN_L + 0.11, FMS_Y2 + 0.02},1},
+      {{FMS_MARGIN_L + 0.02, FMS_Y2 + 0.02},1}
     }
   }; // points
 }; // PGDOWN
@@ -51,13 +71,13 @@ class PGUP_OPT
   {
     // space where texture should be drawn
     {
-      {{FMS_MARGIN_L + 0.04, FMS_Y3 + 0.01},1},
-      {{FMS_MARGIN_L + 0.09, FMS_Y3 + 0.06},1},
-      {{FMS_MARGIN_L - 0.0, FMS_Y3 + 0.06},1}
+      {{FMS_MARGIN_L + 0.06, FMS_Y3 + 0.01},1},
+      {{FMS_MARGIN_L + 0.11, FMS_Y3 + 0.06},1},
+      {{FMS_MARGIN_L + 0.02, FMS_Y3 + 0.06},1}
     }
   }; // points
 }; // PGUP
-TEXT_FMS_L(OPT_ROCKER,FMS_MARGIN_L,FMS_Y4-(3*FMS_HALF_LINE))
+TEXT_FMS_L(OPT_ROCKER,FMS_MARGIN_L,FMS_Y4-(0.068))
   source = "static";
   text = "LEFT";
 }; // Radio2_Line1
@@ -68,9 +88,9 @@ class PGDOWN_OPT
   {
     // space where texture should be drawn
     {
-      {{FMS_MARGIN_L + 0.04, FMS_Y4 + 0.07},1},
-      {{FMS_MARGIN_L + 0.09, FMS_Y4 + 0.02},1},
-      {{FMS_MARGIN_L - 0.0, FMS_Y4 + 0.02},1}
+      {{FMS_MARGIN_L + 0.06, FMS_Y4 + 0.07},1},
+      {{FMS_MARGIN_L + 0.11, FMS_Y4 + 0.02},1},
+      {{FMS_MARGIN_L + 0.02, FMS_Y4 + 0.02},1}
     }
   }; // points
 }; // PGDOWN
