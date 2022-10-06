@@ -88,6 +88,7 @@ class nav {
   condition= USERVAL(FMS_PAGE_INDEX,FMS_PAGE_NAV_WAYPOINT);
   FMS_BTN(FMS_1,"Next Waypoint","") buttonUp="[vehicle player,""cycle"", 1] call vtx_uh60_fms_fnc_interaction_waypoint;"; };
   FMS_BTN(FMS_2,"Previous waypoint","") buttonUp="[vehicle player,""cycle"", -1] call vtx_uh60_fms_fnc_interaction_waypoint;"; };
+  FMS_BTN(FMS_3,"Delete Waypoint", "") buttonUp="deleteWaypoint [group player, (currentWaypoint group player)];"; };
   FMS_BTN(FMS_4,"Location Stores","")
     buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_NAV_LOCATIONS_LIST], true] call vtx_uh60_fms_fnc_interaction_pageChange;
   };
@@ -244,6 +245,7 @@ class COMM_ACRE {
   };
   FMS_BTN(FMS_5, "Initialize", "")
     buttonUp= [(_this select 0)] call vtx_uh60_acre_fnc_initComms;
+  };
   FMS_BTN(FMS_6, "Radio Settings", "")
     buttonUp= QUOTE([(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_COMM_INFO_ACRE], true] call vtx_uh60_fms_fnc_interaction_pageChange; fms_radio_index = 0;);
   };
@@ -285,6 +287,10 @@ class COMM_PRESETS_ACRE {
   FMS_BTN(FMS_10, "Return", "")
     buttonUp= [(_this select 0),[FMS_PAGE_INDEX,FMS_PAGE_COMM_INFO_ACRE], true] call vtx_uh60_fms_fnc_interaction_pageChange;
   };
-  FMS_BTN(FMS_1,"Prev Page","") buttonUp="fms_presets_page_index = fms_presets_page_index - 1;[vehicle player] call vtx_uh60_fms_fnc_perSecond;"; };
-  FMS_BTN(FMS_2,"Next Page","") buttonUp="fms_presets_page_index = fms_presets_page_index + 1;[vehicle player] call vtx_uh60_fms_fnc_perSecond;"; };
+  FMS_BTN(FMS_1,"Prev Page","") buttonUp="fms_comm_presets_page_index = fms_comm_presets_page_index - 1;[vehicle player] call vtx_uh60_fms_fnc_perSecond;"; };
+  FMS_BTN(FMS_2,"Next Page","") buttonUp="fms_comm_presets_page_index = fms_comm_presets_page_index + 1;[vehicle player] call vtx_uh60_fms_fnc_perSecond;"; };
+  FMS_BTN(FMS_6,"Set to Preset","") buttonUp=[(_this select 0),fms_radio_index, 1, [FMS_PAGE_INDEX,FMS_PAGE_COMM_INFO_ACRE]] call vtx_uh60_acre_fnc_fmsSetPreset;};
+  FMS_BTN(FMS_7,"Set to Preset","") buttonUp=[(_this select 0),fms_radio_index, 2, [FMS_PAGE_INDEX,FMS_PAGE_COMM_INFO_ACRE]] call vtx_uh60_acre_fnc_fmsSetPreset;};
+  FMS_BTN(FMS_8,"Set to Preset","") buttonUp=[(_this select 0),fms_radio_index, 3, [FMS_PAGE_INDEX,FMS_PAGE_COMM_INFO_ACRE]] call vtx_uh60_acre_fnc_fmsSetPreset;};
+  FMS_BTN(FMS_9,"Set to Preset","") buttonUp=[(_this select 0),fms_radio_index, 4, [FMS_PAGE_INDEX,FMS_PAGE_COMM_INFO_ACRE]] call vtx_uh60_acre_fnc_fmsSetPreset;};
 };

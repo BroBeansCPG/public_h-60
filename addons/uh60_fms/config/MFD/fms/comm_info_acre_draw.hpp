@@ -93,7 +93,7 @@ TEXT_FMS_R(TUNE_Text,FMS_MARGIN_R,FMS_Y3-FMS_HALF_LINE)
   source = "static";
   text = "TUNE";
 }; // TUNE_Text
-TEXT_FMS_C(FREQ_Value,FMS_MARGIN_R - 0.18, FMS_Y3+FMS_HALF_LINE+0.012)
+TEXT_FMS_C(FREQ_Value,FMS_MARGIN_R - 0.19, FMS_Y3+FMS_HALF_LINE+0.012)
   source = "userText";
   sourceIndex = 24;
   sourceScale = 1;
@@ -103,11 +103,11 @@ class FREQ_box {
   width = 5;
   lineType = 2;
   points[] ={
-    {{FMS_MARGIN_R + 0.02, FMS_Y3 + 0.10},1}, //BR
-    {{FMS_MARGIN_R - 0.34, FMS_Y3 + 0.10},1}, //BL
-    {{FMS_MARGIN_R - 0.34, FMS_Y3 + 0.045},1}, //TL
-    {{FMS_MARGIN_R + 0.02, FMS_Y3 + 0.045},1}, //TR
-    {{FMS_MARGIN_R + 0.02, FMS_Y3 + 0.10},1} //BR
+    {{FMS_MARGIN_R + 0.04, FMS_Y3 + 0.10},1}, //BR
+    {{FMS_MARGIN_R - 0.36, FMS_Y3 + 0.10},1}, //BL
+    {{FMS_MARGIN_R - 0.36, FMS_Y3 + 0.045},1}, //TL
+    {{FMS_MARGIN_R + 0.04, FMS_Y3 + 0.045},1}, //TR
+    {{FMS_MARGIN_R + 0.04, FMS_Y3 + 0.10},1} //BR
   };
 }; // FREQ_box
 TEXT_FMS_L(MENU_Text,FMS_MARGIN_L,FMS_Y5)

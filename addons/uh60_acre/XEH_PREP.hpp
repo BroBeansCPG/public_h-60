@@ -4,3 +4,4 @@ PREP(changeTX);
 PREP(initComms);
 PREP(cycleRadioChannel);
 PREP(cycleSpatial);
+PREP(fmsSetPreset);

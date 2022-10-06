@@ -1,6 +1,6 @@
 TEXT_FMS_C(HEADER_TEXT,0.5,FMS_YHEAD)
   source = "static";
-  text = "COMMUNICATIONS";
+  text = "COM - SUM";
 }; // HEADER_TEXT
 
 /*class Comm1_box {

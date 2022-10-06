@@ -18,13 +18,7 @@ if(vtx_uh60_ui_showDebugMessages) then {
 
 private _workPos = [_vehicle, acre_player, 0, "workKnob"] call acre_sys_intercom_fnc_getStationConfiguration;
 
-private _currentDirection = -1;
-if (_value > _workPos) then {
-	//increase tx knob 
-	_currentDirection = 1;
-};
-
-private _newWorkPos = ((_workPos + _currentDirection) max 0) min 7;
+private _newWorkPos = ((_value) max 0) min 7;
 
 if (_newWorkPos == _workPos) exitWith {};
 

@@ -95,7 +95,7 @@ private _strings = switch ((getUserMFDValue _vehicle) # _fms) do {
             private _frequencyTX = ([_x, "getCurrentChannelData"] call acre_sys_data_fnc_dataEvent) getVariable "frequencyTx";
             private _channelOut = [_radioBase, "default", _radioChannel, "label"] call acre_api_fnc_getPresetChannelField;
             private _frequencyTXOut = [_frequencyTX, 1, 3] call CBA_fnc_formatNumber;
-            _strings set [_forEachIndex, format ["%1 MHz        CH%2    %3", _frequencyTXOut, _radioChannel, _channelOut]];
+            _strings set [_forEachIndex, format ["%1 MHz     CH%2", _frequencyTXOut, _radioChannel]];
         } forEach _radios;
         _strings
     };
@@ -110,24 +110,24 @@ private _strings = switch ((getUserMFDValue _vehicle) # _fms) do {
         _frequencyTX = ([_radio, "getCurrentChannelData"] call acre_sys_data_fnc_dataEvent) getVariable "frequencyTx";
         private _frequencyTXOut = [_frequencyTX, 1, 3] call CBA_fnc_formatNumber;
 
-        [format ["COM %1", fms_radio_index + 1], format ["CH%1", _radioChannel], _presetOut, _spatial, format ["%1Mhz", _frequencyTXOut]]
+        [format ["COM %1 SETTINGS", fms_radio_index + 1], format ["CH%1", _radioChannel], _presetOut, _spatial, format ["%1Mhz", _frequencyTXOut]]
     };
     case FMS_PAGE_COMM_PRESETS_ACRE: {
         private _racks = [_vehicle] call acre_api_fnc_getVehicleRacks;
         private _radio = [_racks # fms_radio_index] call acre_api_fnc_getMountedRackRadio;
         private _radioBase = [_radio] call acre_api_fnc_getBaseRadio;
-        private _presets = [];
+        fms_comm_presets_page_list = [];
         for "_i" from 1 to 20 do {
             _preset = [_radioBase, "default", _i, "label"] call acre_api_fnc_getPresetChannelField;
-            _presets pushBack _preset;
+            fms_comm_presets_page_list pushBack _preset;
         };
-        private _pageCount = ceil ((count _presets) / 4);
-        fms_presets_page_index = fms_presets_page_index max 0 min (_pageCount - 1);
-        private _strings = [format["%1/%2", fms_presets_page_index + 1, _pageCount], "", "", "",""];
-        private _fmsPrintStart = fms_presets_page_index * 4;
+        private _pageCount = ceil ((count fms_comm_presets_page_list) / 4);
+        fms_comm_presets_page_index = fms_comm_presets_page_index max 0 min (_pageCount - 1);
+        private _strings = [format["%1/%2", fms_comm_presets_page_index + 1, _pageCount], "", "", "",""];
+        private _fmsPrintStart = fms_comm_presets_page_index * 4;
         for "_i" from 0 to 3 do {
-            if (_fmsPrintStart + _i < count _presets) then {
-                _strings set [_i + 1, _presets # (_fmsPrintStart + _i)];
+            if (_fmsPrintStart + _i < count fms_comm_presets_page_list) then {
+                _strings set [_i + 1, fms_comm_presets_page_list # (_fmsPrintStart + _i)];
             };
         };
         _strings
