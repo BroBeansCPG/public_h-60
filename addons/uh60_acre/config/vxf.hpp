@@ -57,7 +57,7 @@ class vxf_driver: vxf_driver {
                 looping=0;
                 animStates[] = {0, 0.091, 0.182, 0.273, 0.364};
                 animLabels[] = {"ICS", "1", "2", "3", "4"};
-                animEnd="";
+                animEnd="_this call vtx_uh60_acre_fnc_changeTX";
                 clickSound="vxf_Switch_Sound";
             }; // knob_tx
         }; // acreConfig
