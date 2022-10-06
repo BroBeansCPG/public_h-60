@@ -95,7 +95,6 @@ class Draw {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_PERFPLAN);
 		#include "fms\performance_planning_draw.hpp"
 	}; // nav_wpn
-	}; // HMD
 	class COMM {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM);
 		#include "fms\comm_draw.hpp"
@@ -104,12 +103,12 @@ class Draw {
 		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM_ACRE);
 		#include "fms\comm_acre_draw.hpp"
 	}; // COMM
-	class COMM1_ACRE {
-		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM1_ACRE);
-		#include "fms\comm1_acre_draw.hpp"
+	class COMM_INFO_ACRE {
+		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM_INFO_ACRE);
+		#include "fms\comm_info_acre_draw.hpp"
 	};
-	class PRESET_LIST {
-		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_PRESET_LIST);
-		#include "fms\comm_presets_list.hpp"
+	class PRESETS_ACRE {
+		condition = COND_ISNUMBER(FMS_PAGE_INDEX,FMS_PAGE_COMM_PRESETS_ACRE);
+		#include "fms\comm_presets_acre.hpp"
 	};
 }; // Draw

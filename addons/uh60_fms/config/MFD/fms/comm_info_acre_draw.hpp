@@ -1,38 +1,30 @@
 TEXT_FMS_C(HEADER_TEXT,0.5,FMS_YHEAD)
-  source = "static";
-  text = "FM1";
+  source = "userText";
+  sourceIndex = 20;
+  sourceScale = 1;
 }; // HEADER_TEXT
 
 TEXT_FMS_R(PRESET_SEL,FMS_MARGIN_R - 0.02, FMS_Y1-FMS_HALF_LINE)
   source = "static";
   text = "PRESET";
 }; //PRESET_SEL
-TEXT_FMS_R(PRESET_SEL_VAL,FMS_MARGIN_R - 0.025, FMS_Y1+FMS_HALF_LINE+0.012)
-  source = "static";
-  text = "PLTNET";
+TEXT_FMS_C(PRESET_SEL_VAL,FMS_MARGIN_R - 0.17, FMS_Y1+FMS_HALF_LINE+0.012)
+  source = "userText";
+  sourceIndex = 22;
+  sourceScale = 1;
 }; //PRESET_VAL
 class PRESET_box {
   type="line";
   width = 5;
   lineType = 2;
   points[] ={
-    {{FMS_MARGIN_R + 0.01, FMS_Y1 + 0.11},1}, //BR
-    {{FMS_MARGIN_R - 0.25, FMS_Y1 + 0.11},1}, //BL
-    {{FMS_MARGIN_R - 0.25, FMS_Y1 + 0.045},1}, //TL
-    {{FMS_MARGIN_R + 0.01, FMS_Y1 + 0.045},1}, //TR
-    {{FMS_MARGIN_R + 0.01, FMS_Y1 + 0.11},1} //BR
+    {{FMS_MARGIN_R + 0.02, FMS_Y1 + 0.10},1}, //BR
+    {{FMS_MARGIN_R - 0.32, FMS_Y1 + 0.10},1}, //BL
+    {{FMS_MARGIN_R - 0.32, FMS_Y1 + 0.045},1}, //TL
+    {{FMS_MARGIN_R + 0.02, FMS_Y1 + 0.045},1}, //TR
+    {{FMS_MARGIN_R + 0.02, FMS_Y1 + 0.10},1} //BR
   };
 }; // PRESET_box
-
-TEXT_FMS_L(RADIO_MHZ,0.42,FMS_Y2+FMS_HALF_LINE)
-  source = "static";
-  text = "59.500";
-  //sourceIndex=20;
-}; // Radio1_Line1
-TEXT_FMS_L(RADIO_MHZ_Lbl,0.45,FMS_Y3-FMS_HALF_LINE)
-  source = "static";
-  text = "MHz";
-}; // Radio1_Line2
 class PGUP_CH
 {
   type    = "polygon";
@@ -47,8 +39,9 @@ class PGUP_CH
   }; // points
 }; // PGUP
 TEXT_FMS_L(CH_ROCKER,FMS_MARGIN_L + 0.02,FMS_Y2-(0.07))
-  source = "static";
-  text = "CH1";
+  source = "userText";
+  sourceIndex = 21;
+  sourceScale = 1;
 }; // Radio2_Line1
 class PGDOWN_CH
 {
@@ -78,8 +71,9 @@ class PGUP_OPT
   }; // points
 }; // PGUP
 TEXT_FMS_L(OPT_ROCKER,FMS_MARGIN_L,FMS_Y4-(0.068))
-  source = "static";
-  text = "LEFT";
+  source = "UserText";
+  sourceIndex = 23;
+  sourceScale = 1;
 }; // Radio2_Line1
 class PGDOWN_OPT
 {
@@ -95,6 +89,27 @@ class PGDOWN_OPT
   }; // points
 }; // PGDOWN
 
+TEXT_FMS_R(TUNE_Text,FMS_MARGIN_R,FMS_Y3-FMS_HALF_LINE)
+  source = "static";
+  text = "TUNE";
+}; // TUNE_Text
+TEXT_FMS_C(FREQ_Value,FMS_MARGIN_R - 0.18, FMS_Y3+FMS_HALF_LINE+0.012)
+  source = "userText";
+  sourceIndex = 24;
+  sourceScale = 1;
+}; //FREQ_Value
+class FREQ_box {
+  type="line";
+  width = 5;
+  lineType = 2;
+  points[] ={
+    {{FMS_MARGIN_R + 0.02, FMS_Y3 + 0.10},1}, //BR
+    {{FMS_MARGIN_R - 0.34, FMS_Y3 + 0.10},1}, //BL
+    {{FMS_MARGIN_R - 0.34, FMS_Y3 + 0.045},1}, //TL
+    {{FMS_MARGIN_R + 0.02, FMS_Y3 + 0.045},1}, //TR
+    {{FMS_MARGIN_R + 0.02, FMS_Y3 + 0.10},1} //BR
+  };
+}; // FREQ_box
 TEXT_FMS_L(MENU_Text,FMS_MARGIN_L,FMS_Y5)
   source = "static";
   text = "< RTN";

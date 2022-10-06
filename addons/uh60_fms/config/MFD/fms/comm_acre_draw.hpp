@@ -93,7 +93,7 @@ TEXT_FMS_L(RADIO_FOUR_L2,FMS_MARGIN_L,FMS_Y4+FMS_HALF_LINE)
 
 TEXT_FMS_R(SETTINGS_Text,FMS_MARGIN_R,FMS_Y5)
   source = "static";
-  text = "OPT >";
+  text = "INIT";
 }; // Menu_Text
 
 TEXT_FMS_L(MENU_Text,FMS_MARGIN_L,FMS_Y5)
