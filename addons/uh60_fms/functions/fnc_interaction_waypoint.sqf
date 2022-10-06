@@ -109,13 +109,6 @@ switch (_action) do {
         _vehicle setPilotCameraTarget (AGLtoASL (locationPosition _location));
 		[true, (AGLtoASL (locationPosition _location))] remoteExecCall ["vtx_uh60_flir_fnc_syncTurret", crew _vehicle];
     };
-    case "comm_presets": {
-        private _index = fms_comm_presets_page_index * 4 + _value;
-        if (_index < count fms_comm_presets_page_list) then {
-            fms_locations_selected = fms_comm_presets_page_list # _index # 1;
-            _vehicle setUserMFDvalue _pageData;
-        };
-    };
 };
 
 [_vehicle] call vtx_uh60_fms_fnc_perSecond;
